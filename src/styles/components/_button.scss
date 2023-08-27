@@ -1,0 +1,22 @@
+@use "../vars" as *;
+
+@mixin btn() {
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  border: 0;
+  padding: $base-padding $base-padding * 2;
+  border-radius: $base-border-radius;
+}
+
+@each $key, $val in $colors {
+  .btn-#{$key} {
+    @include btn();
+    background-color: $val;
+  }
+  .btn-outline-#{$key} {
+    @include btn();
+    background-color: transparent;
+    border: $base-border-width * 2 solid $val;
+  }
+}

@@ -1,0 +1,50 @@
+@use "./vars" as *;
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: $main-font-stack;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  &:link {
+    color: inherit;
+  }
+  &:visited {
+    color: inherit;
+  }
+  &:focus {
+    color: inherit;
+  }
+  &:hover {
+    color: inherit;
+  }
+  &:active {
+    color: inherit;
+  }
+}
+
+hr {
+  border: 0;
+  border-top: 1px dotted #efefef;
+}
+
+img {
+  max-width: 100%;
+}

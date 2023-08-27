@@ -1,0 +1,300 @@
+@use "./vars" as *;
+@use "./functions";
+@use "sass:math";
+
+$utilities: (
+  // ********************** PADDING ************************
+  "padding":
+    (
+      "prefix": "p",
+      "values": (
+        "0": 0,
+        "quarter": $base-margin * 0.25,
+        "half": $base-margin * 0.5,
+        "three-quarter": $base-margin * 0.75,
+        "1": $base-padding,
+        "2": $padding-2,
+        "3": $padding-3,
+        "4": $padding-4,
+        "5": $padding-5,
+      ),
+    ),
+  "padding-left": (
+    "prefix": "pl",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-padding,
+      "2": $padding-2,
+      "3": $padding-3,
+      "4": $padding-4,
+      "5": $padding-5,
+    ),
+  ),
+  "padding-right": (
+    "prefix": "pr",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-padding,
+      "2": $padding-2,
+      "3": $padding-3,
+      "4": $padding-4,
+      "5": $padding-5,
+    ),
+  ),
+  "padding-top": (
+    "prefix": "pt",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-padding,
+      "2": $padding-2,
+      "3": $padding-3,
+      "4": $padding-4,
+      "5": $padding-5,
+    ),
+  ),
+  "padding-bottom": (
+    "prefix": "pb",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-padding,
+      "2": $padding-2,
+      "3": $padding-3,
+      "4": $padding-4,
+      "5": $padding-5,
+    ),
+  ),
+  // ********************** MARGIN ************************
+  "margin":
+    (
+      "prefix": "m",
+      "values": (
+        "0": 0,
+        "quarter": $base-margin * 0.25,
+        "half": $base-margin * 0.5,
+        "three-quarter": $base-margin * 0.75,
+        "1": $base-margin,
+        "2": $margin-2,
+        "3": $margin-3,
+        "4": $margin-4,
+        "5": $margin-5,
+      ),
+    ),
+
+  "margin-top": (
+    "prefix": "mt",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-margin,
+      "2": $margin-2,
+      "3": $margin-3,
+      "4": $margin-4,
+      "5": $margin-5,
+    ),
+  ),
+  "margin-bottom": (
+    "prefix": "mb",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-margin,
+      "2": $margin-2,
+      "3": $margin-3,
+      "4": $margin-4,
+      "5": $margin-5,
+    ),
+  ),
+  "margin-left": (
+    "prefix": "ml",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-margin,
+      "2": $margin-2,
+      "3": $margin-3,
+      "4": $margin-4,
+      "5": $margin-5,
+    ),
+  ),
+  "margin-right": (
+    "prefix": "mr",
+    "values": (
+      "0": 0,
+      "quarter": $base-margin * 0.25,
+      "half": $base-margin * 0.5,
+      "three-quarter": $base-margin * 0.75,
+      "1": $base-margin,
+      "2": $margin-2,
+      "3": $margin-3,
+      "4": $margin-4,
+      "5": $margin-5,
+    ),
+  ),
+  // ********************** OPACITY ************************
+  "opacity":
+    (
+      "prefix": "o",
+      "values": (
+        "10": 0.1,
+        "20": 0.2,
+        "30": 0.3,
+        "40": 0.4,
+        "50": 0.5,
+        "60": 0.6,
+        "70": 0.7,
+        "80": 0.8,
+        "90": 0.9,
+        "100": 1,
+      ),
+    ),
+
+  // ********************** BORDER RADIUS ************************
+  "border-radius":
+    (
+      "prefix": "br",
+      "values": (
+        "default": $base-border-radius,
+        "none": 0,
+        "xs": math.div($base-border-radius, 4),
+        "sm": math.div($base-border-radius, 2),
+        "lg": $base-border-radius * 2,
+        "full": 50%,
+      ),
+    ),
+  // ********************** BORDER RADIUS ************************
+  "border-width":
+    (
+      "prefix": "bw",
+      "values": (
+        "none": 0,
+        "1": $base-border-width,
+        "2": $base-border-width * 2,
+        "3": $base-border-width * 4,
+        "4": $base-border-width * 6,
+        "5": $base-border-width * 8,
+      ),
+    ),
+  // ************************* DISPLAY ***************************
+  "display":
+    (
+      "prefix": "display",
+      "values": (
+        "n": none,
+        "b": block,
+        "f": flex,
+        "i": inline,
+        "i-b": inline-block,
+      ),
+    ),
+  // ************************ FONT SIZE **************************
+  "font-size":
+    (
+      "prefix": "font",
+      "values": (
+        "sm": $font-size-sm,
+        "md": $base-font-size,
+        "lg": $font-size-lg,
+        "xl": $font-size-xl,
+        "xxl": $font-size-xxl,
+        "xxxl": $font-size-xxxl,
+        "xxxxl": $font-size-xxxxl,
+      ),
+    ),
+  // ************************ VISIBILITY **************************
+  "visibility":
+    (
+      "prefix": "vis",
+      "values": (
+        "default": visible,
+        "hidden": hidden,
+        "collapse": collapse,
+      ),
+    ),
+
+  // ************************ CURSOR **************************
+  "cursor":
+    (
+      "prefix": "cursor",
+      "values": (
+        "pointer": pointer,
+      ),
+    ),
+  // ******************** WHITE SPACE **********************
+  "white-space":
+    (
+      "prefix": "white-space",
+      "values": (
+        "no-wrap": nowrap,
+      ),
+    ),
+  // ********************* ROTATION ***********************
+  "transform":
+    (
+      "prefix": "rotate",
+      "values": (
+        "none": rotate(0deg),
+        "0": rotate(0deg),
+        "45": rotate(45deg),
+        "90": rotate(90deg),
+        "135": rotate(135deg),
+        "180": rotate(180deg),
+        "flip": rotate(180deg),
+        "225": rotate(255deg),
+        "270": rotate(270deg),
+        "315": rotate(315deg),
+      ),
+    )
+);
+
+@each $property, $map in $utilities {
+  $prefix: map-get($map, $key: "prefix");
+  $values: map-get($map, $key: "values");
+
+  @each $key, $val in $values {
+    @if ($key == "default") {
+      .#{$prefix} {
+        #{$property}: $val;
+      }
+    } @else {
+      .#{$prefix}-#{$key} {
+        #{$property}: $val;
+      }
+    }
+  }
+}
+
+// ********************** FLEX BOX ************************
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-layout {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+// ********************** Containers ************************
+.container {
+  @extend .flex-layout;
+}

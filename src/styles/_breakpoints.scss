@@ -1,0 +1,75 @@
+@use "./vars" as *;
+
+$breakpoints: (
+  "xs": 0px,
+  "sm": 480px,
+  "md": 720px,
+  "lg": 960px,
+  "xl": 1200px,
+);
+
+@mixin xs {
+  @media (max-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (max-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin md {
+  @media (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (max-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+
+@mixin breakpoint($bp: 0) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+
+.responsiveTest::before {
+  @include xs {
+    color: red;
+    content: "breakpoint: xs";
+    text-transform: uppercase;
+  }
+  @include sm {
+    color: blue;
+    content: "breakpoint: sm";
+    text-transform: uppercase;
+  }
+  @include md {
+    color: green;
+    content: "breakpoint: md";
+    text-transform: uppercase;
+  }
+  @include lg {
+    color: purple;
+    content: "breakpoint: lg";
+    text-transform: uppercase;
+  }
+  @include xl {
+    color: orange;
+    content: "breakpoint: xl";
+    text-transform: uppercase;
+  }
+  @include breakpoint(1400px) {
+    color: pink;
+    content: "breakpoint: custom";
+    text-transform: uppercase;
+  }
+}

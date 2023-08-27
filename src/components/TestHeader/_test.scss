@@ -1,0 +1,6 @@
+@use "../../styles/vars" as *;
+
+.test-header {
+  border-style: solid;
+  border-color: $secondary;
+}

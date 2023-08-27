@@ -1,0 +1,88 @@
+@use "../../styles/vars" as *;
+@use "../../styles/breakpoints" as screen;
+@use "sass:map";
+
+#footer {
+  grid-area: footer;
+  padding-top: $padding-2 * 1.5;
+  padding-bottom: $padding-2;
+  padding-left: $padding-2;
+  padding-right: $padding-2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas:
+    "copyright TOP attributions"
+    "copyright TOP attributions"
+    "copyright TOP attributions";
+
+  @include screen.lg {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "copyright TOP attributions"
+      "copyright TOP attributions"
+      "copyright TOP attributions";
+  }
+  @include screen.md {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "copyright TOP"
+      "attributions attributions"
+      "attributions attributions";
+  }
+  @include screen.sm {
+    grid-template-areas:
+      "copyright copyright copyright"
+      "TOP TOP TOP"
+      "attributions attributions attributions";
+  }
+
+  gap: $padding-1;
+
+  .copyright-container {
+    justify-self: center;
+    grid-area: copyright;
+    font-size: $base-font-size;
+    .icon {
+      margin-left: $margin-1 * 0.5;
+      cursor: pointer;
+      transition: transform 1s ease-in-out, scale 1s ease-in-out,
+        color 1s ease-in-out;
+      &:hover {
+        transform: rotate(720deg);
+        scale: 1.2;
+        color: map.get($colors, "link");
+      }
+    }
+  }
+  .top-container {
+    justify-self: center;
+    grid-area: TOP;
+    .top-link {
+      text-decoration: underline;
+      color: map.get($colors, "link");
+      margin-left: $margin-1 * 0.5;
+      transition: font-weight 0.15s;
+      &:link {
+        color: map.get($colors, "link");
+      }
+      &:visited {
+        color: map.get($colors, "link");
+      }
+      &:focus {
+        color: map.get($colors, "link");
+      }
+      &:hover {
+        color: map.get($colors, "link");
+      }
+      &:active {
+        color: map.get($colors, "link");
+      }
+    }
+  }
+  .attributions-container {
+    justify-self: center;
+    grid-area: attributions;
+    max-width: 150px;
+  }
+}

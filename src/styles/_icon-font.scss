@@ -1,0 +1,50 @@
+@font-face {
+  font-family: "icon-font";
+  src: url("../assets/icon-font/icons.eot?zbbegd");
+  src: url("../assets/icon-font/icons.eot?zbbegd#iefix")
+      format("embedded-opentype"),
+    url("../assets/icon-font/icons.ttf?zbbegd") format("truetype"),
+    url("../assets/icon-font/icons.woff?zbbegd") format("woff"),
+    url("../assets/icon-font/icons.svg?zbbegd#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.icon {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icon-font" !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-up-down:before {
+  content: "\e900";
+}
+.icon-up-arrow:before {
+  content: "\e901";
+}
+.icon-triangle:before {
+  content: "\e902";
+}
+.icon-plus-sign:before {
+  content: "\e903";
+}
+.icon-pencil:before {
+  content: "\e904";
+  color: #4d4d4d;
+}
+.icon-hamburger-menu:before {
+  content: "\e905";
+}
+.icon-github-cat:before {
+  content: "\e906";
+}

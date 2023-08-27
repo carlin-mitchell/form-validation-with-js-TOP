@@ -1,0 +1,79 @@
+@use "../../../styles/vars" as *;
+
+.expandable-panel-title {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 1fr;
+  gap: $padding-1 * 0.5;
+  cursor: pointer;
+  margin-bottom: $margin-1 * 0.5;
+  &:last-child() {
+    margin-bottom: none;
+  }
+  &:hover {
+    button {
+      background-color: white;
+      color: darken(gray, 30%);
+    }
+  }
+  button {
+    display: grid;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: $padding-1 * 0.2;
+    color: inherit;
+    cursor: inherit;
+    width: 1.5rem;
+    justify-self: end;
+    &.expanded {
+      background-color: white;
+      color: darken(gray, 30%);
+    }
+    .icon {
+      justify-self: center;
+      align-self: center;
+    }
+  }
+}
+
+.expandable-panel-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  transition: grid-template-rows 0.5s ease-in-out;
+  * {
+    overflow: hidden;
+  }
+  &.expanded {
+    grid-template-rows: 1fr;
+  }
+  .content:not(.expandable-panel-content) {
+    display: grid;
+    gap: $padding-1 * 0.5;
+  }
+}
+
+.non-expandable-panel {
+  &.is-link {
+    text-decoration: underline;
+    &:hover {
+      color: orangered;
+    }
+  }
+  .icon {
+    margin-left: $margin-1 * 0.5;
+  }
+}
+
+.icons-explanation div {
+  font-style: italic;
+  font-size: $font-size-sm;
+  a {
+    display: inline;
+    text-decoration: underline;
+    &:hover {
+      color: orangered;
+    }
+  }
+}
