@@ -1,3 +1,3 @@
 export const githubInfo = {
-  repoName: "boilerplate-webpack",
+  repoName: "form-validation-with-js-TOP",
 };

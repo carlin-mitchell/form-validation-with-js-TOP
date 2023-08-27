@@ -10,7 +10,7 @@ import Element from "../Element";
 // }
 
 const Header = () => {
-  const h1 = Element("h1", { innerText: "This is the header" });
+  const h1 = Element("h1", { innerText: "Form Validation With JS" });
 
   const otherClasses = "bg-gray-dark-3 text-white p-2";
   const header = Element(

@@ -38,7 +38,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "XXXtitleXXX",
+      title: "form-validation-with-js-TOP",
     }),
     new MiniCssExtractPlugin(),
     new PurgeCSSPlugin({
