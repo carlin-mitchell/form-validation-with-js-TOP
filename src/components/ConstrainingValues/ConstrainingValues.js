@@ -1,6 +1,8 @@
 // COMPONENT IMPORTS
 import Element from "../Element";
 
+import { Div, Input, Label, Button } from "../_basic-elements/basic-elements";
+
 // LOGIC IMPORTS
 //
 
@@ -10,14 +12,6 @@ import Element from "../Element";
 // }
 
 const ConstrainingValues = () => {
-  const Div = (props, children) =>
-    Element("div", props ? { ...props } : {}, children ? [...children] : []);
-
-  const Input = (props, children) =>
-    Element("input", props ? { ...props } : {}, children ? [...children] : []);
-
-  const Label = (props, children) =>
-    Element("label", props ? { ...props } : {}, children ? [...children] : []);
   const sharedClasses = "mr-1";
 
   const h2 = Element("h2", { innerText: "Constraining Values" });
@@ -55,7 +49,7 @@ const ConstrainingValues = () => {
   ]);
 
   const button = Div([
-    Element("button", {
+    Button({
       innerText: "Submit",
       className: sharedClasses,
     }),
