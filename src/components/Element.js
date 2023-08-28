@@ -6,11 +6,15 @@
  * @returns {Element} the a reference to the element created in memory
  */
 export const Element = (typeStr, propsObj, childArr = null) => {
-  let list;
-  if ("list" in propsObj) {
-    list = propsObj.list;
-    delete propsObj.list;
-  }
+  let setAttributeProperties = ["list"];
+  let properties = [];
+  setAttributeProperties.forEach((property) => {
+    if (property in propsObj) {
+      const value = propsObj[property];
+      properties.push({ name: property, value: value });
+      delete propsObj[property];
+    }
+  });
 
   if (childArr && !Array.isArray(childArr)) {
     childArr = [childArr];
@@ -25,8 +29,10 @@ export const Element = (typeStr, propsObj, childArr = null) => {
     childArr.forEach((child) => parentElement.appendChild(child));
   }
 
-  if (list) {
-    parentElement.setAttribute("list", list);
+  if (properties.length) {
+    properties.forEach((property) => {
+      parentElement.setAttribute(property.name, property.value);
+    });
   }
 
   return parentElement;
