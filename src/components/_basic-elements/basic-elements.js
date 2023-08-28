@@ -84,5 +84,8 @@ export const Strong = (props, children) =>
 export const Span = (props, children) =>
   Element("span", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Textarea = (props, children) =>
+  Element("textarea", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Ul = (props, children) =>
   Element("ul", props ? { ...props } : {}, children ? [...children] : []);

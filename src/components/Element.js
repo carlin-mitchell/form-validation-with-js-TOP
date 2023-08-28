@@ -5,7 +5,13 @@
  * @param {array} childArr (optional) an of element objects to be appended as children to this element
  * @returns {Element} the a reference to the element created in memory
  */
-const Element = (typeStr, propsObj, childArr = null) => {
+export const Element = (typeStr, propsObj, childArr = null) => {
+  let list;
+  if ("list" in propsObj) {
+    list = propsObj.list;
+    delete propsObj.list;
+  }
+
   if (childArr && !Array.isArray(childArr)) {
     childArr = [childArr];
   }
@@ -17,6 +23,10 @@ const Element = (typeStr, propsObj, childArr = null) => {
 
   if (childArr) {
     childArr.forEach((child) => parentElement.appendChild(child));
+  }
+
+  if (list) {
+    parentElement.setAttribute("list", list);
   }
 
   return parentElement;

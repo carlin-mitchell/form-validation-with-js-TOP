@@ -1,8 +1,11 @@
 // COMPONENT IMPORTS
 import { Div, Fieldset, Form, H2, P } from "../_basic-elements/basic-elements";
 import DriversLicenseInput from "./DriversLicenseInput";
+import EmailInput from "./EmailInput";
 import FavoriteFruitInput from "./FavoriteFruitInput";
 import HowOldAreYouInput from "./HowOldAreYou";
+import ShortMessageInput from "./ShortMessageInput";
+import SubmitButton from "./SubmitButton";
 
 // LOGIC IMPORTS
 //
@@ -25,6 +28,9 @@ const FullHtmlExample = () => {
         DriversLicenseInput(),
         HowOldAreYouInput(),
         FavoriteFruitInput(),
+        EmailInput(),
+        ShortMessageInput(),
+        SubmitButton(),
       ]),
     ]
   );

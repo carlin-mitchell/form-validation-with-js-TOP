@@ -18,15 +18,6 @@ import {
 // }
 
 const FavoriteFruitInput = () => {
-  const input = Input({
-    type: "text",
-    id: "t1",
-    name: "fruit",
-    required: true,
-    pattern: "[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range",
-  });
-  input.setAttribute("list", "l1");
-
   const favoriteFruitInput = Div({}, [
     Label({
       for: "t1",
@@ -34,7 +25,14 @@ const FavoriteFruitInput = () => {
         Span({ ariaLabel: "required", innerText: "*" }).outerHTML
       }`,
     }),
-    input,
+    Input({
+      list: "l1",
+      type: "text",
+      id: "t1",
+      name: "fruit",
+      required: true,
+      pattern: "[Bb]anana|[Cc]herry|[Aa]pple|[Ss]trawberry|[Ll]emon|[Oo]range",
+    }),
     Datalist({ id: "l1" }, [
       Option({ innerText: "Banana" }),
       Option({ innerText: "Cherry" }),
