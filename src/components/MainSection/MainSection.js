@@ -3,7 +3,7 @@ import { generateTestContentArr } from "../../utils";
 import Element from "../Element";
 
 import SimpleForm from "../SimpleStart/Simple";
-
+import ConstrainingValues from "../ConstrainingValues/ConstrainingValues";
 // LOGIC IMPORTS
 //
 
@@ -21,7 +21,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [SimpleForm()]
+    [SimpleForm(), ConstrainingValues()]
   );
   return main;
 };

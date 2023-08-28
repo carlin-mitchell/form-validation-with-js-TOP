@@ -12,6 +12,8 @@ import Element from "../Element";
 const SimpleForm = () => {
   const sharedClasses = "mr-1";
 
+  const h2 = Element("h2", { innerText: "Simple Start" });
+
   const label = Element("label", {
     for: "choose",
     innerText: "Would you prefer a bannana or cherry?",
@@ -23,6 +25,7 @@ const SimpleForm = () => {
     name: "i-like",
     className: sharedClasses,
     required: true,
+    pattern: "[Bb]anana|[Cc]herry",
   });
 
   const button = Element("button", {
@@ -30,12 +33,13 @@ const SimpleForm = () => {
     className: sharedClasses,
   });
 
-  const otherClasses = "";
+  const div = Element("div", {}, [label, input, button]);
+  const otherClasses = "mb-3";
   const form = Element(
     "form",
     { className: "simple-form" + " " + otherClasses },
     // add child elements to the array below
-    [label, input, button]
+    [h2, div]
   );
   return form;
 };
