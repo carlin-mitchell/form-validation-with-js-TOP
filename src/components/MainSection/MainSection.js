@@ -4,6 +4,8 @@ import Element from "../Element";
 
 import SimpleForm from "../SimpleStart/Simple";
 import ConstrainingValues from "../ConstrainingValues/ConstrainingValues";
+import FullHtmlExample from "../FullHtmlValidationExample/FullHtmlValidationExample";
+
 // LOGIC IMPORTS
 //
 
@@ -21,7 +23,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [SimpleForm(), ConstrainingValues()]
+    [SimpleForm(), ConstrainingValues(), FullHtmlExample()]
   );
   return main;
 };

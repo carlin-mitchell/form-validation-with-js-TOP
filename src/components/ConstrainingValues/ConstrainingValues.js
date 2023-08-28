@@ -37,8 +37,10 @@ const ConstrainingValues = () => {
     Label({
       for: "number",
       innerText: "How many would you like?",
+      className: sharedClasses,
     }),
     Input({
+      className: sharedClasses,
       type: "number",
       id: "number",
       name: "amount",
@@ -48,7 +50,7 @@ const ConstrainingValues = () => {
     }),
   ]);
 
-  const button = Div([
+  const button = Div({ className: "display-i-b" }, [
     Button({
       innerText: "Submit",
       className: sharedClasses,

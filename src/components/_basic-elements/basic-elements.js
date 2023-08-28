@@ -24,6 +24,12 @@ export const Div = (props, children) =>
 export const Footer = (props, children) =>
   Element("footer", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Form = (props, children) =>
+  Element("form", props ? { ...props } : {}, children ? [...children] : []);
+
+export const Fieldset = (props, children) =>
+  Element("fieldset", props ? { ...props } : {}, children ? [...children] : []);
+
 export const H1 = (props, children) =>
   Element("h1", props ? { ...props } : {}, children ? [...children] : []);
 
@@ -53,6 +59,9 @@ export const Li = (props, children) =>
 
 export const Label = (props, children) =>
   Element("label", props ? { ...props } : {}, children ? [...children] : []);
+
+export const Legend = (props, children) =>
+  Element("legend", props ? { ...props } : {}, children ? [...children] : []);
 
 export const Main = (props, children) =>
   Element("main", props ? { ...props } : {}, children ? [...children] : []);
