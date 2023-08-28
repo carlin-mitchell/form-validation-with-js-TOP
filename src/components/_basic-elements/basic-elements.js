@@ -21,14 +21,17 @@ export const Br = (props, children) =>
 export const Div = (props, children) =>
   Element("div", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Datalist = (props, children) =>
+  Element("datalist", props ? { ...props } : {}, children ? [...children] : []);
+
+export const Fieldset = (props, children) =>
+  Element("fieldset", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Footer = (props, children) =>
   Element("footer", props ? { ...props } : {}, children ? [...children] : []);
 
 export const Form = (props, children) =>
   Element("form", props ? { ...props } : {}, children ? [...children] : []);
-
-export const Fieldset = (props, children) =>
-  Element("fieldset", props ? { ...props } : {}, children ? [...children] : []);
 
 export const H1 = (props, children) =>
   Element("h1", props ? { ...props } : {}, children ? [...children] : []);
@@ -54,20 +57,23 @@ export const Img = (props, children) =>
 export const Input = (props, children) =>
   Element("input", props ? { ...props } : {}, children ? [...children] : []);
 
-export const Li = (props, children) =>
-  Element("li", props ? { ...props } : {}, children ? [...children] : []);
-
 export const Label = (props, children) =>
   Element("label", props ? { ...props } : {}, children ? [...children] : []);
 
 export const Legend = (props, children) =>
   Element("legend", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Li = (props, children) =>
+  Element("li", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Main = (props, children) =>
   Element("main", props ? { ...props } : {}, children ? [...children] : []);
 
 export const Ol = (props, children) =>
   Element("ol", props ? { ...props } : {}, children ? [...children] : []);
+
+export const Option = (props, children) =>
+  Element("option", props ? { ...props } : {}, children ? [...children] : []);
 
 export const P = (props, children) =>
   Element("p", props ? { ...props } : {}, children ? [...children] : []);

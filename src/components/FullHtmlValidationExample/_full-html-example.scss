@@ -1,0 +1,17 @@
+@use "../../styles/vars" as *;
+
+.full-validation-example {
+  h2 {
+    margin-bottom: $margin-1;
+  }
+  label {
+    margin-right: $margin-1 * 0.25;
+  }
+  input {
+    margin-right: $margin-1;
+    padding: $padding-1 * 0.25;
+  }
+  p {
+    margin-bottom: $margin-2;
+  }
+}
