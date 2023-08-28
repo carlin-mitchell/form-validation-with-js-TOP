@@ -2,6 +2,8 @@
 import { generateTestContentArr } from "../../utils";
 import Element from "../Element";
 
+import SimpleForm from "../SimpleStart/Simple";
+
 // LOGIC IMPORTS
 //
 
@@ -11,7 +13,7 @@ import Element from "../Element";
 // }
 
 const MainSection = () => {
-  const otherClasses = "";
+  const otherClasses = "p-1";
   const main = Element(
     "main",
     {
@@ -19,7 +21,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    []
+    [SimpleForm()]
   );
   return main;
 };
