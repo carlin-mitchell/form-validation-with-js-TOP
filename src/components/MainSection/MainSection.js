@@ -5,6 +5,7 @@ import Element from "../Element";
 import SimpleForm from "../SimpleStart/Simple";
 import ConstrainingValues from "../ConstrainingValues/ConstrainingValues";
 import FullHtmlExample from "../FullHtmlValidationExample/FullHtmlValidationExample";
+import CustomizedErrorMessage from "../CustomizedErrorMessageWithJs/CustomizedErrorMessageWithJs";
 
 // LOGIC IMPORTS
 //
@@ -23,7 +24,12 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [SimpleForm(), ConstrainingValues(), FullHtmlExample()]
+    [
+      SimpleForm(),
+      ConstrainingValues(),
+      FullHtmlExample(),
+      CustomizedErrorMessage(),
+    ]
   );
   return main;
 };
