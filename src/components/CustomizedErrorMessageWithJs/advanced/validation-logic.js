@@ -40,7 +40,6 @@ export function inputListener() {
 
 export function submitListener(e) {
   const email = getEmailInput();
-  const emailError = getEmailError();
 
   if (!email.validity.valid) {
     showError();
