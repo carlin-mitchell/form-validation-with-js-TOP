@@ -6,10 +6,10 @@ import {
   Label,
   Input,
   Button,
-} from "../_basic-elements/basic-elements";
+} from "../../_basic-elements/basic-elements";
 
 // LOGIC IMPORTS
-//
+import { customizeEmailValidationTypeMessage } from "./validation-logic";
 
 // COMPONENT METHODS
 // function someMethod() {
@@ -19,10 +19,10 @@ import {
 const CustomizedErrorMessage = () => {
   const otherClasses = "";
   const parentElement = Div(
-    { className: "customized-error-with-js" + " " + otherClasses },
+    { className: "customized-error-with-js-simple" + " " + otherClasses },
     // add child elements to the array below
     [
-      H2({ innerText: "Customized Error Message with JS" }),
+      H2({ innerText: "Customized Error Message with JS - simple" }),
       Form({}, [
         Div({}, [
           Label({
@@ -34,11 +34,7 @@ const CustomizedErrorMessage = () => {
             id: "mail",
             name: "mail",
             oninput() {
-              if (this.validity.typeMismatch) {
-                this.setCustomValidity("I am expecting an email address!");
-              } else {
-                this.setCustomValidity("");
-              }
+              customizeEmailValidationTypeMessage();
             },
           }),
         ]),

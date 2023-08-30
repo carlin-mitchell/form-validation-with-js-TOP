@@ -5,7 +5,8 @@ import Element from "../Element";
 import SimpleForm from "../SimpleStart/Simple";
 import ConstrainingValues from "../ConstrainingValues/ConstrainingValues";
 import FullHtmlExample from "../FullHtmlValidationExample/FullHtmlValidationExample";
-import CustomizedErrorMessage from "../CustomizedErrorMessageWithJs/CustomizedErrorMessageWithJs";
+import CustomizedErrorMessage from "../CustomizedErrorMessageWithJs/simple/CustomizedErrorMessageWithJs";
+import CustomizedErrorAdvanced from "../CustomizedErrorMessageWithJs/advanced/CustomizedErrorMessageWithJsAdvanced";
 
 // LOGIC IMPORTS
 //
@@ -29,6 +30,7 @@ const MainSection = () => {
       ConstrainingValues(),
       FullHtmlExample(),
       CustomizedErrorMessage(),
+      CustomizedErrorAdvanced(),
     ]
   );
   return main;
