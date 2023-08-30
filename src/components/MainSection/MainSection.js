@@ -7,6 +7,7 @@ import ConstrainingValues from "../ConstrainingValues/ConstrainingValues";
 import FullHtmlExample from "../FullHtmlValidationExample/FullHtmlValidationExample";
 import CustomizedErrorMessage from "../CustomizedErrorMessageWithJs/simple/CustomizedErrorMessageWithJs";
 import CustomizedErrorAdvanced from "../CustomizedErrorMessageWithJs/advanced/CustomizedErrorMessageWithJsAdvanced";
+import NoConstraintValidationApi from "../CustomizedErrorMessageWithJs/example-without-constraint-validation-api/NoConstraintVaildation";
 
 // LOGIC IMPORTS
 //
@@ -31,6 +32,7 @@ const MainSection = () => {
       FullHtmlExample(),
       CustomizedErrorMessage(),
       CustomizedErrorAdvanced(),
+      NoConstraintValidationApi(),
     ]
   );
   return main;

@@ -7,6 +7,7 @@
   button {
     max-width: max-content;
   }
+  margin-bottom: $margin-2;
 }
 
 .customized-error-with-js-advanced {
@@ -63,4 +64,9 @@
   .error.active {
     padding: 0.3em;
   }
+  margin-bottom: $margin-2;
+}
+
+.no-constraint-api {
+  //
 }
