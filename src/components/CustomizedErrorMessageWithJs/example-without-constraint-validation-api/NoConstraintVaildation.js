@@ -9,6 +9,7 @@ import {
   Span,
   P,
 } from "../../_basic-elements/basic-elements";
+import { handleSubmit, inputEventHandler } from "./logic";
 
 // LOGIC IMPORTS
 //
@@ -25,16 +26,30 @@ const NoConstraintValidationApi = () => {
     // add child elements to the array below
     [
       H2({ innerText: "Without Constraint Validation API" }),
-      Form({}, [
-        P({}, [
-          Label({ for: "mail3" }, [
-            Span({ innerText: "Please enter an email address" }),
-            Input({ type: "text", id: "mail3", name: "mail" }),
-            Span({ className: "error", ariaLive: "polite" }),
+      Form(
+        {
+          onsubmit(e) {
+            handleSubmit(e);
+          },
+        },
+        [
+          P({}, [
+            Label({ for: "mail3" }, [
+              Span({ innerText: "Please enter an email address" }),
+              Input({
+                type: "text",
+                id: "mail3",
+                name: "mail",
+                oninput() {
+                  inputEventHandler();
+                },
+              }),
+              Span({ className: "error", ariaLive: "polite" }),
+            ]),
           ]),
-        ]),
-        Button({ innerText: "Submit" }),
-      ]),
+          Button({ innerText: "Submit" }),
+        ]
+      ),
     ]
   );
   return parentElement;

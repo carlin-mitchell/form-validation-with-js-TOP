@@ -1,4 +1,5 @@
 import { debounce } from "../../utils";
+import { loadEventHandler } from "../../components/CustomizedErrorMessageWithJs/example-without-constraint-validation-api/logic";
 
 const breakPoints = {
   xs: 0,
@@ -9,7 +10,6 @@ const breakPoints = {
 };
 
 export function applyWindowListeners() {
-  window.onresize = debounce(function (e) {
-    //
-  });
+  window.onresize = debounce(function (e) {});
+  window.onload = loadEventHandler;
 }
