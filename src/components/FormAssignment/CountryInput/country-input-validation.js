@@ -1,4 +1,4 @@
-import { clearError } from "../validation";
+import { clearError } from "../form-validation";
 
 export function getCountryInput() {
   return document.querySelector(".assignment .country-input");

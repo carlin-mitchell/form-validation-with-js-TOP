@@ -2,7 +2,7 @@
 import { Div, Form, Span } from "../_elements/Elements";
 import CountryInput from "./CountryInput/CountryInput";
 import EmailInput from "./EmailInput/EmailInput";
-import { handleFormSubmit } from "./validation";
+import { handleFormSubmit } from "./form-validation";
 import SubmitButton from "./SubmitButton";
 // LOGIC IMPORTS
 //
