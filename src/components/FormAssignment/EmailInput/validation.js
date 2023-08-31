@@ -9,25 +9,40 @@ export function getEmailInputError() {
 
 export function handleEmailInput() {
   const email = getEmailInput();
-  const emailError = getEmailInputError();
+  const error = getEmailInputError();
 
   if (email.validity.valid) {
-    emailError.innerText = "";
-    emailError.className = "error";
+    clearError(error);
   } else {
     showError();
   }
 }
 
+export function handleFormSubmit(event) {
+  const email = getEmailInput();
+  const error = getEmailInputError();
+  const isValid = email.validity.valid;
+
+  if (!isValid) {
+    showError();
+    event.preventDefault();
+  }
+}
+
 function showError() {
   const email = getEmailInput();
-  const emailError = getEmailInputError();
+  const error = getEmailInputError();
   let errorMessage = "Please enter a valid email address.";
 
   if (email.validity.valueMissing) {
     errorMessage = "This form must be submitted with an email address.";
   }
 
-  emailError.innerText = errorMessage;
-  emailError.className = "error active";
+  error.innerText = errorMessage;
+  error.className = "error active";
+}
+
+function clearError(errorElement) {
+  errorElement.innerText = "";
+  errorElement.className = "error";
 }
