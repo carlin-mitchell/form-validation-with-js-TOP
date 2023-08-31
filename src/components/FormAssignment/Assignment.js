@@ -1,6 +1,7 @@
 // COMPONENT IMPORTS
-import { Div, Form } from "../_elements/Elements";
+import { Div, Form, Span } from "../_elements/Elements";
 import EmailInput from "./EmailInput/EmailInput";
+import SubmitButton from "./SubmitButton";
 // LOGIC IMPORTS
 //
 
@@ -14,7 +15,17 @@ const Assignment = () => {
   const parentElement = Div(
     { className: "assignment" + " " + otherClasses },
     // add child elements to the array below
-    [Form({}, [EmailInput()])]
+    [
+      Form({}, [
+        EmailInput(),
+        SubmitButton(),
+        Div({
+          innerHTML: `${
+            Span({ className: "required-marker", innerText: "*" }).outerHTML
+          } indicates a required field`,
+        }),
+      ]),
+    ]
   );
   return parentElement;
 };

@@ -1,7 +1,7 @@
 // COMPONENT IMPORTS
-import { Div, Input, Label } from "../../_elements/Elements";
+import { Div, Input, Label, Span } from "../../_elements/Elements";
 import { v4 as uuidv4 } from "uuid";
-import { handleEmailInput } from "../logic";
+import { handleEmailInput } from "./validation";
 // LOGIC IMPORTS
 //
 
@@ -15,20 +15,27 @@ export const emailInputId = `email-input-${componentUuid}`;
 const EmailInput = () => {
   const otherClasses = "";
   const parentElement = Div(
-    { className: "" + " " + otherClasses },
+    { className: "form-control" + " " + otherClasses },
     // add child elements to the array below
     [
       Label({
         for: `${emailInputId}`,
-        innerText: "Please enter an email address",
+        innerHTML: `Please enter an email address ${
+          Span({
+            className: "required-marker",
+            innerText: "*",
+          }).outerHTML
+        }`,
       }),
       Input({
         id: `${emailInputId}`,
         type: "email",
+        required: true,
         oninput() {
           handleEmailInput();
         },
       }),
+      Div({ className: "error" }),
     ]
   );
   return parentElement;
