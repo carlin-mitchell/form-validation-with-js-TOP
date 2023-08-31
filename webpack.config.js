@@ -39,6 +39,9 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       title: "form-validation-with-js-TOP",
+      meta: {
+        viewport: "width=device-width, initial-scale=1, maximum-scale=1",
+      },
     }),
     new MiniCssExtractPlugin(),
     new PurgeCSSPlugin({
