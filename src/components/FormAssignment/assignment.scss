@@ -44,8 +44,10 @@ $dark-red: darken(red, 20%);
 
     input,
     select {
+      border-radius: 0;
       -webkit-appearance: none;
-      -webkit-border-radius: 0;
+      -moz-appearance: none;
+      appearance: none;
       border: 1px solid black;
       padding: $padding-sm;
       display: block;
