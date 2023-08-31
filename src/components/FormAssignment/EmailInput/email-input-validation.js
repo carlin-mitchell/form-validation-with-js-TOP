@@ -12,11 +12,8 @@ export function emailIsValid() {
 }
 
 export function handleEmailInput() {
-  const email = getEmailInput();
-  const error = getEmailInputError();
-
-  if (email.validity.valid) {
-    clearError(error);
+  if (emailIsValid()) {
+    clearError(getEmailInputError());
   } else {
     showEmailError();
   }

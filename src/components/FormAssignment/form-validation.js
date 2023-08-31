@@ -8,6 +8,11 @@ import {
   emailIsValid,
 } from "./EmailInput/email-input-validation";
 
+import {
+  showZipCodeError,
+  zipCodeIsValid,
+} from "./Input/zip-code-input-validation";
+
 export function handleFormSubmit(event) {
   if (!emailIsValid()) {
     showEmailError();
@@ -16,6 +21,11 @@ export function handleFormSubmit(event) {
   if (!countryIsValid()) {
     showCountryError();
     event.preventDefault();
+  }
+
+  if (!zipCodeIsValid()) {
+    showZipCodeError();
+    event.preventDefault;
   }
 }
 
