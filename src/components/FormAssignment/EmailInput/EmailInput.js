@@ -1,7 +1,7 @@
 // COMPONENT IMPORTS
 import { Div, Input, Label, Span } from "../../_elements/Elements";
 import { v4 as uuidv4 } from "uuid";
-import { handleEmailInput } from "./validation";
+import { handleEmailInput } from "../validation";
 // LOGIC IMPORTS
 //
 

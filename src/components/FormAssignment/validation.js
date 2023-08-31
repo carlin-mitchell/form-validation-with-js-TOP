@@ -1,4 +1,4 @@
-import { emailInputId } from "./EmailInput";
+import { emailInputId } from "./EmailInput/EmailInput";
 
 export function getEmailInput() {
   return document.getElementById(emailInputId);
@@ -14,22 +14,21 @@ export function handleEmailInput() {
   if (email.validity.valid) {
     clearError(error);
   } else {
-    showError();
+    showEmailError();
   }
 }
 
 export function handleFormSubmit(event) {
   const email = getEmailInput();
-  const error = getEmailInputError();
-  const isValid = email.validity.valid;
+  const emailIsValid = email.validity.valid;
 
-  if (!isValid) {
-    showError();
+  if (!emailIsValid) {
+    showEmailError();
     event.preventDefault();
   }
 }
 
-function showError() {
+function showCountryError() {
   const email = getEmailInput();
   const error = getEmailInputError();
   let errorMessage = "Please enter a valid email address.";
@@ -45,4 +44,17 @@ function showError() {
 function clearError(errorElement) {
   errorElement.innerText = "";
   errorElement.className = "error";
+}
+
+function showEmailError() {
+  const email = getEmailInput();
+  const error = getEmailInputError();
+  let errorMessage = "Please enter a valid email address.";
+
+  if (email.validity.valueMissing) {
+    errorMessage = "This form must be submitted with an email address.";
+  }
+
+  error.innerText = errorMessage;
+  error.className = "error active";
 }

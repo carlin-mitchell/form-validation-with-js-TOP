@@ -125,6 +125,9 @@ export const Option = (props, children) =>
 export const P = (props, children) =>
   Element("p", props ? { ...props } : {}, children ? [...children] : []);
 
+export const Select = (props, children) =>
+  Element("select", props ? { ...props } : {}, children ? [...children] : []);
+
 export const Strong = (props, children) =>
   Element("strong", props ? { ...props } : {}, children ? [...children] : []);
 

@@ -42,13 +42,20 @@ $dark-red: darken(red, 20%);
   .form-control {
     display: grid;
 
-    input {
+    input,
+    select {
+      border: 1px solid black;
       padding: $padding-sm;
       display: block;
       width: 100%;
       z-index: 1;
+      &.invalid,
       &:invalid {
         background-color: $light-red;
+        border-color: $dark-red;
+        &:focus {
+          outline: none;
+        }
       }
     }
 
