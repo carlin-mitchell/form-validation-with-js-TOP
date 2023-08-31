@@ -10,6 +10,7 @@ import {
 } from "../../_elements/Elements";
 import { v4 as uuidv4 } from "uuid";
 import { countries } from "./countriesList";
+import { handleCountryInput } from "./country-input-validation";
 
 // LOGIC IMPORTS
 //
@@ -36,10 +37,19 @@ const CountryInput = () => {
           }).outerHTML
         }`,
       }),
-      Select({ className: "country-input" }, [
-        Option({ innerText: "Select a country" }),
-        ...countries.map((country) => Option({ innerText: country })),
-      ]),
+      Select(
+        {
+          className: "country-input",
+          required: true,
+          oninput() {
+            handleCountryInput();
+          },
+        },
+        [
+          Option(),
+          ...countries.map((country) => Option({ innerText: country })),
+        ]
+      ),
       //   Input({
       //     id: `${countryInputId}`,
       //     type: "text",
@@ -49,12 +59,14 @@ const CountryInput = () => {
       //       //;
       //     },
       //   }),
+
+      Div({ className: "error" }),
       Datalist({ id: "countries" }, [
         ...countries.map((country) => Option({ innerText: country })),
       ]),
-      Div({ className: "error" }),
     ]
   );
+  console.log(countries.join("|"));
   return parentElement;
 };
 

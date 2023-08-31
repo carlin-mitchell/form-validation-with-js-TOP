@@ -1,6 +1,6 @@
 // COMPONENT IMPORTS
 import { Div, Form, Span } from "../_elements/Elements";
-import CountryInput from "./CourtnyInput/CountryInput";
+import CountryInput from "./CountryInput/CountryInput";
 import EmailInput from "./EmailInput/EmailInput";
 import { handleFormSubmit } from "./validation";
 import SubmitButton from "./SubmitButton";

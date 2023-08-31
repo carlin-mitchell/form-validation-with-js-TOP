@@ -1,4 +1,9 @@
 import { emailInputId } from "./EmailInput/EmailInput";
+import {
+  getCountryInput,
+  showCountryError,
+  countryIsValid,
+} from "./CountryInput/country-input-validation";
 
 export function getEmailInput() {
   return document.getElementById(emailInputId);
@@ -6,6 +11,14 @@ export function getEmailInput() {
 export function getEmailInputError() {
   return document.querySelector(`#${emailInputId} + .error`);
 }
+
+// export function getCountryInput() {
+//   return document.querySelector(".assignment .country-input");
+// }
+
+// export function getCountryInputError() {
+//   return document.querySelector(".assignment .country-input + .error");
+// }
 
 export function handleEmailInput() {
   const email = getEmailInput();
@@ -26,24 +39,10 @@ export function handleFormSubmit(event) {
     showEmailError();
     event.preventDefault();
   }
-}
-
-function showCountryError() {
-  const email = getEmailInput();
-  const error = getEmailInputError();
-  let errorMessage = "Please enter a valid email address.";
-
-  if (email.validity.valueMissing) {
-    errorMessage = "This form must be submitted with an email address.";
+  if (!countryIsValid()) {
+    showCountryError();
+    event.preventDefault();
   }
-
-  error.innerText = errorMessage;
-  error.className = "error active";
-}
-
-function clearError(errorElement) {
-  errorElement.innerText = "";
-  errorElement.className = "error";
 }
 
 function showEmailError() {
@@ -57,4 +56,9 @@ function showEmailError() {
 
   error.innerText = errorMessage;
   error.className = "error active";
+}
+
+export function clearError(errorElement) {
+  errorElement.innerText = "";
+  errorElement.className = "error";
 }
