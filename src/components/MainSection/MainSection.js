@@ -1,8 +1,7 @@
 // COMPONENT IMPORTS
 import { generateTestContentArr } from "../../utils";
 import Element from "../Element";
-
-import SimpleForm from "../SimpleStart/Simple";
+import Assignment from "../FormAssignment/Assignment";
 
 // LOGIC IMPORTS
 //
@@ -13,7 +12,7 @@ import SimpleForm from "../SimpleStart/Simple";
 // }
 
 const MainSection = () => {
-  const otherClasses = "p-1";
+  const otherClasses = "p-2";
   const main = Element(
     "main",
     {
@@ -21,7 +20,7 @@ const MainSection = () => {
       className: "" + " " + otherClasses,
     },
     // add child elements to the array below
-    [SimpleForm()]
+    [Assignment()]
   );
   return main;
 };
