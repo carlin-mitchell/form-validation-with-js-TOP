@@ -5,6 +5,8 @@ import ZipCodeInput from "./Input/ZipCodeInput";
 import CountryInput from "./CountryInput/CountryInput";
 import EmailInput from "./EmailInput/EmailInput";
 import SubmitButton from "./SubmitButton";
+import PasswordInput from "./PasswordInputs/PasswordInput";
+import ConfirmPasswordInput from "./PasswordInputs/ConfirmPasswordInput";
 // LOGIC IMPORTS
 //
 
@@ -30,6 +32,8 @@ const Assignment = () => {
           EmailInput(),
           CountryInput(),
           ZipCodeInput(),
+          PasswordInput(),
+          ConfirmPasswordInput(),
           SubmitButton(),
           Div({
             innerHTML: `${
