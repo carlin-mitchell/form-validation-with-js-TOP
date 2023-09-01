@@ -62,6 +62,9 @@ $dark-red: darken(red, 20%);
         }
       }
     }
+    select option {
+      background-color: white !important;
+    }
 
     .error {
       color: white;

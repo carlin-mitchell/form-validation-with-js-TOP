@@ -84,5 +84,7 @@
     justify-self: center;
     grid-area: attributions;
     max-width: 150px;
+    display: grid;
+    gap: 15px;
   }
 }
