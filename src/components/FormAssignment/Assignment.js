@@ -7,6 +7,8 @@ import EmailInput from "./EmailInput/EmailInput";
 import SubmitButton from "./SubmitButton";
 import PasswordInput from "./PasswordInputs/PasswordInput";
 import ConfirmPasswordInput from "./PasswordInputs/ConfirmPasswordInput";
+
+import { v4 as uuidv4 } from "uuid";
 // LOGIC IMPORTS
 //
 
@@ -14,6 +16,8 @@ import ConfirmPasswordInput from "./PasswordInputs/ConfirmPasswordInput";
 // function someMethod() {
 //   //
 // }
+const componentUuid = uuidv4();
+export const formId = `form-${componentUuid}`;
 
 const Assignment = () => {
   const otherClasses = "";
@@ -23,6 +27,7 @@ const Assignment = () => {
     [
       Form(
         {
+          id: formId,
           noValidate: true,
           onsubmit(event) {
             handleFormSubmit(event);

@@ -25,7 +25,7 @@ export function showEmailError() {
   let errorMessage = "Please enter a valid email address.";
 
   if (email.validity.valueMissing) {
-    errorMessage = "This form must be submitted with an email address.";
+    errorMessage = "You must enter an email address to continue.";
   }
 
   error.innerText = errorMessage;

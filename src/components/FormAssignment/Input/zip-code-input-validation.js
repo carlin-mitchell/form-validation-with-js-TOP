@@ -26,7 +26,7 @@ export function showZipCodeError() {
   let errorMessage = "Enter a valid zip code format. (55555 or 55555-4444)";
 
   if (zipCode.validity.valueMissing) {
-    errorMessage = "This form requires you to enter a zip code.";
+    errorMessage = "You must enter a valid zip code to continue.";
   } else {
   }
 

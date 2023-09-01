@@ -12,20 +12,53 @@ import {
   showZipCodeError,
   zipCodeIsValid,
 } from "./Input/zip-code-input-validation";
+import {
+  confirmPasswordIsValid,
+  passwordIsValid,
+  showConfirmPasswordError,
+  showPasswordError,
+} from "./PasswordInputs/passwords-validation";
+
+function getForm() {}
+
+function allInputsValid(form) {
+  const inputs = [
+    ...document.querySelectorAll("input"),
+    ...document.querySelectorAll("select"),
+  ];
+
+  for (let i = 0; i < inputs.length; i++) {
+    const inputValidity = inputs[i].validity.valid;
+    if (!inputValidity) {
+      return false;
+    }
+  }
+  return true;
+}
 
 export function handleFormSubmit(event) {
-  if (!emailIsValid()) {
-    showEmailError();
+  if (allInputsValid()) {
     event.preventDefault();
-  }
-  if (!countryIsValid()) {
-    showCountryError();
+    console.log("SUBMITTED!");
+    return;
+  } else {
     event.preventDefault();
-  }
+    if (!emailIsValid()) {
+      showEmailError();
+    }
+    if (!countryIsValid()) {
+      showCountryError();
+    }
+    if (!zipCodeIsValid()) {
+      showZipCodeError();
+    }
+    if (!passwordIsValid()) {
+      showPasswordError();
+    }
 
-  if (!zipCodeIsValid()) {
-    showZipCodeError();
-    event.preventDefault;
+    if (!confirmPasswordIsValid()) {
+      showConfirmPasswordError();
+    }
   }
 }
 

@@ -17,11 +17,11 @@ export function getPasswordInputError() {
 }
 
 export function passwordIsValid() {
-  return getConfirmPasswordInput().validity.valid;
+  return getPasswordInput().validity.valid;
 }
 
 export function getPasswordInputValue() {
-  return getConfirmPasswordInput().value;
+  return getPasswordInput().value;
 }
 
 export function handlePasswordInput() {
@@ -36,7 +36,7 @@ export function showPasswordError() {
   const password = getPasswordInput();
   const error = getPasswordInputError();
   let errorMessage =
-    "Valid passwords are at lease 12 characters long and contain at lease one uppercase letter, one lowercase letter, and a number.";
+    "Valid passwords are at lease 12 characters long and contain at lease one uppercase letter and one lowercase letter.";
 
   if (password.validity.valueMissing) {
     errorMessage = "You must enter a password to continue.";
@@ -48,7 +48,6 @@ export function showPasswordError() {
 
 // ######################## CONFIRM PASSWORD INPUT ###########################
 export function getConfirmPasswordInput() {
-  console.log(confirmPasswordInputId);
   return document.getElementById(confirmPasswordInputId);
 }
 
@@ -58,9 +57,14 @@ export function getConfirmPasswordInputError() {
 export function getConfirmPasswordInputValue() {
   return getConfirmPasswordInput().value;
 }
+
+export function confirmPasswordIsValid() {
+  return getConfirmPasswordInput().validity.valid;
+}
+
 export function handleConfirmPasswordInput() {
   const input = getConfirmPasswordInput();
-  if (getPasswordInputValue() === getConfirmPasswordInput()) {
+  if (getPasswordInputValue() === getConfirmPasswordInputValue()) {
     input.setCustomValidity("");
   } else {
     input.setCustomValidity("invalid");
@@ -79,7 +83,7 @@ export function showConfirmPasswordError() {
   let errorMessage = "Passwords do not match.";
 
   if (password.validity.valueMissing) {
-    errorMessage = "You must enter confirm your password to continue.";
+    errorMessage = "You must confirm your password to continue.";
   }
 
   error.innerText = errorMessage;
